@@ -1,0 +1,349 @@
+Dataset_Name,Link,template1,template2,template3,fs_template,fs
+aio,https://huggingface.co/datasets/llm-book/aio,"[INST]次の質問に日本語で回答してください。
+{original_question}
+[/INST]{original_answer}","[INST]次の質問の回答はなんですか？日本語で回答してください。
+Q:{original_question}
+A:[/INST]{original_answer}","[INST]次の質問に日本語で答えて下さい。
+{original_question} 
+[/INST]{original_answer}",例：{original_question},"[INST]次の質問の回答はなんですか？日本語で回答してください。{fs_template}
+{original_question}
+[/INST]{original_answer}"
+alt_jp,https://huggingface.co/datasets/alt,"[INST]次の日本語の文に対して、係り受け解析を実施して、係り受けのツリーを作ってください。
+{text} 
+[/INST]{value}","[INST]以下の日本語文を係り受け分析して、係り受け木を作成してください。
+{text}
+[/INST]{value}","[INST]以下の日本語の文に対して係り受け解析を実施して、その係り受けツリーを作ってください。
+{text} 
+[/INST]{value}",例：{text},"[INST]以下の日本語文を係り受け分析して、係り受け木を作成してください。{fs_template}
+{text}
+[/INST]{value}"
+aozorabunko,https://www.kaggle.com/datasets/ryancahildebrandt/azbcorpus,"[INST]次の文章に対して以下のクラスからラベルを一つつけてください。
+Classes:{all_class}
+Text:{text}
+Answer:[/INST]{class}","[INST]以下のテキストを次のクラスのいずれかに分類してください。
+クラス：{all_class}
+テキスト：{text}
+[/INST]{class}","[INST]以下の文章に対して次のクラスからひとつラベルを付けて下さい：{all_class}
+{text}
+[/INST]{class}",例：{text},"[INST]以下のテキストを次のクラスのいずれかに分類してください：{all_class}{fs_template}
+テキスト：{text}
+[/INST]{class}"
+conceptnet5,https://huggingface.co/datasets/conceptnet5,"[INST]二つの日本語単語の間の関係を教えてください：{arg1}, {arg2}. 関係を表現する候補は以下のものから選んだください：{all_rels}。
+[/INST]{rel}","[INST]次の日本語の2単語の関係を見つけてください。単語1：{arg1}、単語2：{arg2}。
+
+関係の候補をつぎに示します：{all_rels}。
+[/INST]{rel}","[INST]次の二つの日本語の単語の間にある関係を見つけてください: {arg1}, {arg2}. 候補となる関係は次の通りです: {all_rels}.
+[/INST]{rel}","例：{arg1}, {arg2}","[INST]次の二つの日本語の単語の間にある関係を見つけてください。候補となる関係は次の通りです：{all_rels}。{fs_template}
+{arg1}, {arg2}
+[/INST]{rel}"
+copa,https://github.com/nlp-titech/copa-japanese,"[INST] 前提：{premise}
+二つの文のうち、どちらが前提とつながりますか?
+1) {answer1}
+2) {answer2}
+正解は1または2で返してください。
+[/INST]{label}","[INST] 前提：{premise}
+以下の二文のうち、前提とつながっているのはどっちですか？
+1) {answer1}
+2) {answer2}
+1か2で答えてください。
+答え：[/INST]{label}","[INST] 前提：{premise}
+次の二つの文のうち、どちらが前提と関係がありますか？
+1) {answer1}
+2) {answer2}
+回答は1か2で返してください。
+[/INST]{label}","例：{premise}
+1) {answer1}
+2) {answer2}","[INST] 次の二つの文のうち、どちらが前提と関係がありますか？回答は1か2で返してください。{fs_template}
+前提:{premise}
+1) {answer1}
+2) {answer2}
+[/INST]{label}"
+gem_surface,https://huggingface.co/datasets/GEM/surface_realisation_st_2020,"[INST]係り受けの構造から日本語の文を再構成してください。
+{input}
+[/INST]{target}","[INST]次の日本語文を係り受け構造を元に再構築してください。
+{input}
+[/INST]{target}","[INST]以下の係り受け構造から日本語文を再構成してください。
+{input}
+[/INST]{target}",例：{input},"[INST]次の日本語文を係り受け構造を元に再構築してください。{fs_template}
+{input}
+[/INST]{target}"
+jasquad,https://huggingface.co/datasets/SkelterLabsInc/JaQuAD,"[INST]与えられた文脈に基づいて、質問に日本語で回答してください。
+文脈：{context}
+質問：{question}
+[/INST]{answers}","[INST]以下の文脈のもとで、質問に日本語で答えてください：{context}
+質問：{question}
+答え：[/INST]{answers}","[INST]次の文脈に基づいて、質問に日本語で回答してください：{context}
+Question:{question}
+Answer:[/INST]{answers}","例：{context}
+{question}","[INST]次の文脈に基づいて、質問に日本語で回答してください。{fs_template}
+{context}
+質問：{question}
+答え：[/INST]{answers}"
+jawikinews,https://github.com/marumalo/jawikinews-headline-dataset,"[INST]ウェブから取得した記事に由来する日本語ヘッドラインを作ってください。{article}
+[/INST]{headline}","[INST]Webサイトからスクレイピングされたこの記事に日本語の見出しをつけてください：{article}
+[/INST]{headline}","[INST]ウェブからスクレイピングした次の記事から、日本語の見出しを作成してください。
+記事：{article}
+見出し：[/INST]{headline}",例：{article},"[INST]ウェブから取得した記事に由来する日本語ヘッドラインを作ってください。{fs_template}
+{article}
+[/INST]{headline}"
+journal_latex,https://www.anlp.jp/resource/journal_latex/index.html,"[INST] 以下は研究論文のアブストラクトです。{abstract}
+アブストラクトを参考に、適当なタイトルといくつかのキーワードを考えてください。
+[/INST]タイトル: {title}、キーワード: {keywords}","[INST] これは研究論文のアブストラクトです：{abstract}
+この論文にタイトルをつけて、いくつかのキーワードをあげてください。
+[/INST]タイトル: {title}、キーワード: {keywords}","[INST] 次にあるのはある研究論文のアブストラクトです：{abstract}
+タイトルとキーワードを生成してください。
+[/INST]タイトル: {title}、キーワード: {keywords}",例：{abstract},"[INST] 以下は研究論文のアブストラクトです。アブストラクトを参考に、適当なタイトルといくつかのキーワードを考えてください。{fs_template}
+{abstract}
+[/INST]タイトル: {title}、キーワード: {keywords}"
+jp_emoticon,https://github.com/kuroshiba-Ginji/JapaneseTextEmoticonData,"[INST]日本語テキストに対して、テキストに含まれる感情を二値で分類した上で（positive or negative）、テキストの書き主の感情を述べてください（{all_emotions}）。
+Text：{text}
+[/INST]{sentiment}、感情：{emotion}","[INST]まず、次の日本語分の感positive、negativeのどちらか分類して、その後次の一覧の感情に分類してください。日本語文: {text}
+ 以下は感情の一覧です。
+{all_emotions}
+答え：[/INST]{sentiment}、感情：{emotion}","[INST]次の日本語文に対して、positiveかnegativeかを分類し、その上で感情を分類してください：{text}, 候補となる感情は次の通りです：{all_emotions}
+[/INST]{sentiment}、感情：{emotion}",例：{text},"[INST]日本語テキストに対して、テキストに含まれる感情を二値で分類した上で（positive or negative）、テキストの書き主の感情を述べてください（{all_emotions}）。
+書き主の感情の候補は以下の通りです：{all_emotions} {fs_template}
+Text：{text}
+[/INST]{sentiment}、感情：{emotion}"
+jp_fakenews,https://github.com/tanreinama/japanese-fakenews-dataset,"[INST]次のニュース記事が本物、部分的に間違っているあるいはAIによって生成されたのいずれであるかを回答してください。
+記事：{text}
+次の通り答えてください：オリジナルの記事（人間が執筆した）/　部分的にフェイク（記事の後半をAIモデルが生成した）/　完全にフェイク（記事の全体をAIモデルが生成した）
+答え：[/INST]{label}","[INST]このニュース記事をオリジナルの記事（人間が執筆した）、部分的にフェイク（記事の後半をAIモデルが生成した）、完全にフェイク（記事の全体をAIモデルが生成した）のいずれかに分類してください。
+{text}
+[/INST]{label}","[INST]次のニュース記事が事実（オリジナルの記事（人間が執筆した））か、一部が事実でない（部分的にフェイク（記事の後半をAIモデルが生成した））か、もしくはすべてがAIによって生成されている（完全にフェイク（記事の全体をAIモデルが生成した））か、日本語で答えて下さい。
+{text}
+[/INST]{label}",例：{text},"[INST]このニュース記事をオリジナルの記事（人間が執筆した）、部分的にフェイク（記事の後半をAIモデルが生成した）、完全にフェイク（記事の全体をAIモデルが生成した）のいずれかに分類してください。{fs_template}
+{text}
+[/INST]{label}"
+jp_newspapers,https://www.kaggle.com/datasets/vyhuholl/japanese-newspapers-2005202,"[INST]記事から日本語の新聞のタイトルを書いてください。記事： {text}
+タイトル：[/INST]{title}","[INST]この記事から、日本語の新聞における見出しをつけてください。
+Article:{text}
+Title:[/INST]{title}","[INST]次の記事から日本語の新聞のタイトルを考えて下さい：{text}
+[/INST]{title}",例：{text},"[INST]記事から日本語の新聞のタイトルを書いてください。{fs_template}
+{text}
+[/INST]{title}"
+jp_toxic,https://github.com/inspection-ai/japanese-toxic-dataset/tree/main,"[INST]以下のテキストは有害なコメントを含みますか？
+テキスト：{text}
+もし含むのであれば1を、そうでなければ0を返してください。
+また、どの種類の有害性のあるコメントなのかをカテゴリ（{all_categories}）から選ぶ、または有害なコメントがない場合はNoneを返してください。
+[/INST]ラベル：{label}, カテゴリ：{categories}","[INST]{text}
+この日本語文は有害なコメントを含みますか？含む場合は1、含まない場合は0と回答してください。
+また、これらのカテゴリ（ {all_categories}）のうち、どの種類の有害なコメントを含むか回答してください。
+[/INST]ラベル：{label}, カテゴリ：{categories}","[INST]{text}
+上記の日本語テキストは有害なコメントを含んでいますか？もしそうであれば1を、そうでなければ0を返してください。 
+また、以下のカテゴリのうちどの有害性が存在するかも教えてください：{all_categories}
+有害でない場合はNoneを返してください。
+[/INST]ラベル：{label}, カテゴリ：{categories}",例：{text},"human>:以下のテキストは有害なコメントを含んでいますか？もしそうであれば1を、そうでなければ0を返してください。 
+また、以下のカテゴリのうちどの有害性が存在するかも教えてください:{all_categories} 有害でない場合はNoneを返してください。{fs_template}
+テキスト：{text}
+[/INST]ラベル：{label}, カテゴリ：{categories}"
+jp_word_sim,https://github.com/tmu-nlp/JapaneseWordSimilarityDataset,"[INST]二つの日本語の単語がどのくらいにているかを10段階評価でおしえてください。0を最も似ていない、10を最も似ているものとします。
+単語1：{word1}、単語2：{word2}
+答え：[/INST]{output}","[INST]この2つの日本語の単語の類似度を0（まったく似ていない）から10（とても似ている）で評価してください。
+{word1}、{word2}
+[/INST]{output}","[INST]次の二つの日本語の単語がどれくらい類似しているかを0（全く類似していない）から10（完全に類似している）までの10段階で教えてください。
+{word1}、{word2}
+[/INST]{output}",例：{word1}、{word2},"[INST]この2つの日本語の単語の類似度を0（まったく似ていない）から10（とても似ている）で評価してください。{fs_template}
+{word1}、{word2}
+[/INST]{output}"
+jsnli,https://nlp.ist.i.kyoto-u.ac.jp/index.php?%E6%97%A5%E6%9C%AC%E8%AA%9ESNLI%28JSNLI%29%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88,"[INST]二つの文が""entailment"", ""neutral"", ""contradiction""のいずれに該当するかを回答してください。
+1）{sent1}
+2）{sent2}
+答え：[/INST]{label}","[INST]これは自然言語推論(NLI)タスクです。次の2つの文が""entailment""、""contradiction""を意味するか、""neutral""かを答えてください。
+1：{sent1}
+2：{sent2}
+ラベル：[/INST]{label}","[INST]次の二つの文がentailment、contradiction、neutralのいずれかを教えてください。
+1) {sent1}
+2) {sent2}
+[/INST]{label}","例：
+1）{sent1} 
+2）{sent2}","[INST]次の二つの文がentailment、contradiction、neutralのいずれかを教えてください。{fs_template}
+1）{sent1} 
+2）{sent2}
+[/INST]{label}"
+kanji,https://github.com/davidluzgouveia/kanji-data,"[INST]漢字「{kanji}」の英語での意味を教えてください。
+[/INST]{meaning}","[INST]次の漢字の意味はなんですか？ {kanji}
+英語で答えてください。
+[/INST]{meaning}","[INST]漢字「{kanji}」の英語の意味を教えてください。
+[/INST]{meaning}",例：{kanji},"[INST]漢字の英語の意味を教えてください。{fs_template}
+「{kanji}」
+[/INST]{meaning}"
+keigo_transfer,https://github.com/cl-tohoku/keigo_transfer_task/tree/main,"[INST] {not_keigo}
+上記の文を敬語で書き直してください。.
+[/INST]{keigo}","[INST] {not_keigo}
+この文を丁寧な日本語に直してください。
+[/INST]{keigo}","[INST] {not_keigo}
+上記の文を丁寧な日本語で書き直してください。
+[/INST]{keigo}",例：{not_keigo},"[INST] この文を丁寧な日本語に直してください。{fs_template}
+{not_keigo}
+[/INST]{keigo}"
+kuci,https://nlp.ist.i.kyoto-u.ac.jp/EN/?KUCI,"[INST]この文の続きは何ですか？a,b,c または dのいずれかから選んでください。
+文:{context}
+選択肢:{choices}
+[/INST]{labels}","[INST]この文の続きとして適切な文をa, b, c, dから選んでください。
+文章:{context}
+選択肢:{choices}
+Answer:[/INST]{labels}","[INST]次の文はこの後どのように続きますか？a,b,c,dのいずれかから答えて下さい。
+文:{context}
+選択肢:{choices}
+回答:
+[/INST]{labels}","例：{context}
+{choices}","[INST]この文の続きは何ですか? a,b,c または dのいずれかから選んでください。{fs_template}
+文:{context}
+選択肢:{choices}
+[/INST]{labels}"
+kyoto_web_ncf,https://nlp.ist.i.kyoto-u.ac.jp/index.php?%e4%ba%ac%e9%83%bd%e5%a4%a7%e5%ad%a6%e5%90%8d%e8%a9%9e%e6%a0%bc%e3%83%95%e3%83%ac%e3%83%bc%e3%83%a0,"[INST]「{word}」に関連する単語を作ってください。
+[/INST]{related}","[INST]次の単語に関連する単語を教えてください：{word}
+[/INST]{related}","[INST]{word}に関連する単語を生成してください。
+[/INST]{related}",例：{word},"[INST]次の単語に関連する単語を教えてください {fs_template}
+{word}
+[/INST]{related}"
+livedoor_news_corpus,https://huggingface.co/datasets/llm-book/livedoor-news-corpus,"[INST]下記の記事から日本語のタイトルを作ってください。
+{content}
+[/INST]{title}","[INST]次の記事に日本語の題名をつけてください。
+記事：{content}
+タイトル：
+[/INST]{title}","[INST]以下の記事から日本語のタイトルを生成してください。
+{content}
+[/INST]{title}",例：{content},"[INST]下記の記事から日本語のタイトルを作ってください。{fs_template}
+{content}
+[/INST]{title}"
+massive,https://huggingface.co/datasets/qanastek/MASSIVE,"[INST] 文 {utt} に対して、次の種類のアノテーションを実施してください。{slot_method}
+[/INST]{annott_ut}","[INST] この文「{utt}」に、次の方法でアノテーションをつけてください：{slot_method}
+[/INST]{annott_ut}","[INST]文「{utt}」に対して、次の手法でアノテーションしてください：{slot_method}
+[/INST]{annott_ut}",例：{utt},"[INST]次の文に対して、次の手法でアノテーションしてください：{slot_method} {fs_template}
+「{utt}」
+[/INST]{annott_ut}"
+mcconala,https://huggingface.co/datasets/neulab/mconala,"[INST]次のコーディングの質問をどうやって解きますか？ {rewritten_intent}
+[/INST]{snippet}","[INST]このコーディング問題をどのように解きますか？ {rewritten_intent}
+[/INST]{snippet}","[INST]次のコーティングに関する質問をどのように解きますか？{rewritten_intent}
+[/INST]{snippet}",例：{rewritten_intent},"[INST]次のコーティングに関する質問をどのように解きますか？{fs_template}
+{rewritten_intent}
+[/INST]{snippet}"
+mgsm,https://huggingface.co/datasets/juletxara/mgsm,"[INST]次の数学あるいは算数の問題を解いてください。
+質問：{question}
+答え：[/INST]{answer_number}","[INST]次の数学の問題に回答してください。{question}
+[/INST]{answer_number}","[INST]次の数学に関する質問に答えて下さい：{question}
+[/INST]{answer_number}",例：{question},"[INST]次の数学に関する質問に答えて下さい。{fs_template}
+{question}
+[/INST]{answer_number}"
+miracl,https://huggingface.co/datasets/miracl/miracl,"[INST]この質問に対する回答を含んだPassageを選択してください。番号で答えてください。質問：{query}
+{passages}
+[/INST]{num_correct}","[INST]この問題の答えを含む文章を選んでください：{query}
+{passages}
+[/INST]{num_correct}","[INST]次の質問への答えを含んでいる文章を選んでください：{query}
+{passages}
+[/INST]{num_correct}","例：{query}
+{passages}","[INST]次の質問への答えを含んでいる文章を選んでください {fs_template}
+{query}
+{passages}
+[/INST]{num_correct}"
+mkqa,https://huggingface.co/datasets/mkqa,"[INST]質問に回答してください。{queries}
+[/INST]{answers}","[INST]この質問に答えてください：{queries}
+[/INST]{answers}","[INST]次の質問に答えて下さい。
+質問：{queries}
+答え：[/INST]{answers}",例：{queries},"[INST]質問に回答してください。{fs_template}
+{queries}
+[/INST]{answers}"
+mr_tydi,https://huggingface.co/datasets/castorini/mr-tydi,"[INST]この質問に対する回答を含む句の番号は何ですか？{query}
+{passages}
+[/INST]{num_correct}","[INST]この問題の答えを含む文章は何番ですか？ {query}
+{passages}
+[/INST]{num_correct}","[INST]次の質問への答えを含んでいる文章は何番ですか？{query}
+{passages}
+[/INST]{num_correct}","例：{query}
+{passages}","[INST]この質問に対する回答を含む句の番号は何ですか？{fs_template}
+{query}
+{passages}
+[/INST]{num_correct}"
+ner_wikipedia,https://huggingface.co/datasets/llm-book/ner-wikipedia-dataset,"[INST]次の日本語のテキストに含まれるエンティティを見つけて分類してください。{text}
+エンティティの候補は以下の通りです。{all_entities}
+[/INST]{entities}","[INST]次の日本語文からエンティティを見つけて、分類してください：{text}
+エンティティの候補です：{all_entities}
+[/INST]{entities}","[INST]次の日本語文に含まれるエンティティを探し、分類してください：{text}
+候補となるエンティティは次の通りです：{all_entities}
+答え：[/INST]{entities}",例：{text},"[INST]次の日本語のテキストに含まれるエンティティを見つけて分類してください。エンティティの候補は以下の通りです。{all_entities} {fs_template}
+{text}
+[/INST]{entities}"
+news_commentary,https://huggingface.co/datasets/news_commentary,"[INST]次のニュースの切り抜きを英語から日本語に翻訳してください。{en}
+[/INST]{ja}","[INST]このニュースの抜粋を日本語に翻訳してください：{en}
+[/INST]{ja}","[INST]次のニュース記事を英語から日本語に翻訳してください。記事：{en}
+翻訳：[/INST]{ja}",例：{en},"[INST]このニュースの抜粋を日本語に翻訳してください。{fs_template}
+{en}
+[/INST]{ja}"
+odex,https://huggingface.co/datasets/neulab/odex,"[INST] {intent}
+名前が{entry_point} の関数を作ってください、ただし以下のパッケージを使用してもよいです。 {library}
+[/INST]{prompt}","[INST] {intent}
+{entry_point}という名前のpython関数を作ってください。以下のパッケージを利用可能です：{library}
+[/INST]{prompt}","[INST] {intent}
+「{entry_point}」という名前のpythonの関数を作成してください。なお、以下のパッケージを使用してもかまいません：{library}.
+[/INST]{prompt}","例：{intent}
+「{entry_point}」という名前のpythonの関数を作成してください。なお、以下のパッケージを使用してもかまいません：{library}.","[INST] {fs_template} {intent}
+「{entry_point}」という名前のpythonの関数を作成してください。なお、以下のパッケージを使用してもかまいません：{library}.
+[/INST]{prompt}"
+sakura_japanese,https://huggingface.co/datasets/saldra/sakura_japanese_dataset,"[INST]数学の問題に対して簡単な説明つきで日本語で回答してください。 {instruction}
+[/INST]{output}","[INST]日本語で以下の数学の問題に回答してください。その際、説明もつけてください。 {instruction}
+[/INST]{output}","[INST]次の数学の問題に対し、説明を付けて日本語で回答してください：{instruction}
+答え：[/INST]{output}",例：{instruction},"[INST]数学の問題に対して簡単な説明つきで日本語で回答してください。{fs_template}
+{instruction}
+[/INST]{output}"
+snow_simplified,https://huggingface.co/datasets/snow_simplified_japanese_corpus,"[INST]次の英語の文を日本語に翻訳してください。{original_en}
+[/INST]{original_ja}","[INST]この文を日本語に翻訳してください：{original_en}
+[/INST]{original_ja}","[INST]次の英語の文を日本語に翻訳してください：{original_en}
+[/INST]{original_ja}",例：{original_en},"[INST]次の英語の文を日本語に翻訳してください。{fs_template}
+{original_en}
+[/INST]{original_ja}"
+syosetsu,https://huggingface.co/datasets/RyokoAI/Syosetu711K,"[INST]日本語の小説に対してキーワードをいくつか作成してください。
+{text}
+【キーワード】
+[/INST]{keywords}","[INST]次の日本語の小説について、いくつかキーワードをあげてください。
+{text}
+[/INST]{keywords}","[INST]次の日本語の小説に対していくつかキーワードを生成してください:
+{text}
+キーワード：[/INST]{keywords}",例：{text},"[INST]次の日本語の小説に対していくつかキーワードを生成してください。{fs_template}
+{text}
+[/INST]{keywords}"
+tapaco,https://huggingface.co/datasets/tapaco/,"[INST]次の文と意味が類似している新しい文を4つ書いてください。{sentence1}
+[/INST]{sentence2}","[INST]次の文と同じような意味を持つ、新しい4つの文章を作成してください：{sentence1}
+[/INST]{sentence2}","[INST]次の文に対し同じ意味の文を新しく4つ書いてください：{sentence1}
+[/INST]{sentence2}",例：{sentence1},"[INST]次の文に対し同じ意味の文を新しく4つ書いてください。{fs_template}
+ {sentence1}
+[/INST]{sentence2}"
+tempNLI,https://github.com/tomo-ut/temporalNLI_dataset/tree/main,"[INST] 自然言語推論タスクを実施してください。回答の候補は ""entailment""、""contradiction""、""neutral""の3つから選んでください。
+前提：{premise}
+仮説：{hypothesis}
+ラベル：[/INST]{label}","[INST] NLIタスクを解いてください。回答はentailment（含意）、neutral（中立）、contradiction（矛盾）から選んでください。
+前提：{premise}
+仮説：{hypothesis}
+[/INST]{label}","[INST] 自然言語推論タスクを実施してください。回答の候補はentailment、neutral、contradictionです。
+Premise:{premise}
+Hypothesis:{hypothesis}
+Label:[/INST]{label}",例：{premise}　{hypothesis},"[INST] 自然言語推論タスクを実施してください。回答の候補は ""entailment"", ""neutral"", ""contradiction""です。 {fs_template}
+{premise}　{hypothesis}
+[/INST]{label}"
+tydiqa_copenlu,https://huggingface.co/datasets/copenlu/tydiqa_copenlu,"[INST]{document_plaintext}
+{question_text}
+[/INST]{annotations}","[INST]{document_plaintext}
+{question_text}
+[/INST]{annotations}","[INST]{document_plaintext}
+{question_text}
+[/INST]{annotations}","例：{document_plaintext}
+{question_text}","[INST]{fs_template} {document_plaintext}
+{question_text}
+[/INST]{annotations}"
+wiki_atomic_edits_deletions,https://huggingface.co/datasets/wiki_atomic_edits,"[INST]文（{base_sentence}）と 文（{edited_sentence}）の間で消去されたものはなんですか?
+[/INST]{phrase}","[INST]この文章「{base_sentence}」と次の文「{edited_sentence}」の間で削除されたものはなんですか？
+[/INST]{phrase}","[INST]文「{base_sentence}」と文「{edited_sentence}」の間で削除されている要素は何ですか？
+[/INST]{phrase}",例：この文章「{base_sentence}」と次の文「{edited_sentence}」の間で削除されたものはなんですか？,"[INST]この文章「{base_sentence}」と次の文「{edited_sentence}」の間で削除されたものはなんですか？
+[/INST]{phrase}"
+wiki_atomic_edits_insertions,https://huggingface.co/datasets/wiki_atomic_edits,"[INST]文（{base_sentence}）と 文（{edited_sentence}） の間で挿入されたものはなんですか? 
+[/INST]{phrase}","[INST]この文章「{base_sentence}」と次の文「{edited_sentence}」の間で挿入されたものはなんですか？
+[/INST]{phrase}","[INST]文「{base_sentence}」と文「{edited_sentence}」の間で削除されている要素は何ですか？
+[/INST]{phrase}",例：この文章「{base_sentence}」と次の文「{edited_sentence}」の間で挿入されたものはなんですか？,"[INST]この文章「{base_sentence}」と次の文「{edited_sentence}」の間で挿入されたものはなんですか？
+[/INST]{phrase}"
+xor_tydi_qa,https://huggingface.co/datasets/xor_tydi_qa,"[INST]次の質問に英語で答えてください。{question}
+[/INST]{answers}","[INST]質問：{question}
+Answer in english.[/INST]{answers}","[INST]英語で答えてください。
+質問：{question}
+答え：[/INST]{answers}",例：{question},"[INST]次の質問に英語で答えてください。{fs_template} {question}
+[/INST]{answers}"
